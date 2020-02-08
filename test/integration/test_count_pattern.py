@@ -49,7 +49,7 @@ class TestCLICountPattern(CuratorTestCase):
         self.write_config(
             self.args['actionfile'],
             delete_count_pattern.format(
-                '\'^(a|b|c)-\d$\'', 'false', 'name', '\'%Y.%m.%d\'', 'true', 1
+                r'\'^(a|b|c)-\d$\'', 'false', 'name', '\'%Y.%m.%d\'', 'true', 1
             )
         )
         test = clicktest.CliRunner()
@@ -75,7 +75,7 @@ class TestCLICountPattern(CuratorTestCase):
         self.write_config(
             self.args['actionfile'],
             delete_count_pattern.format(
-                '\'^(a|b)-\d{4}\.\d{2}\.\d{2}$\'', 'true', 'name', '\'%Y.%m.%d\'', 'true', 1
+                r'\'^(a|b)-\d{4}\.\d{2}\.\d{2}$\'', 'true', 'name', '\'%Y.%m.%d\'', 'true', 1
             )
         )
         test = clicktest.CliRunner()
